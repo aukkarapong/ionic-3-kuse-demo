@@ -62,3 +62,7 @@ ionic generate page product-detail
 ```
 
 add page ที่สร้างเข้า promotion.module.ts, app.module.ts
+
+ทำการส่งค่าสินค้าที่เลือกจากหน้า promotion ไปยังหน้า product-detail
+> src/pages/promotion/promotion.ts, src/pages/promotion/promotion.html
+> src/pages/product-detail/product-detail.ts, src/pages/product-detail/product-detail.html
