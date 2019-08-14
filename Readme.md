@@ -4,17 +4,23 @@ ionic start oishi --type=ionic-angular sidemenu
 ```
 
 goto project folder
-> cd oishi
+```
+cd oishi
+```
 
 test start ionic project
-> ionic serve
+```
+ionic serve
+```
 
 เพิ่ม side menu
 > แก้ไขไฟล์ /src/app/app.component.ts
 
 สร้างหน้าใหม่ เพื่อรองรับแต่ละเมนู
 :: https://ionicframework.com/docs/cli/commands/generate
-> ionic generate page register
+```
+ionic generate page register
+```
 
 เชื่อม menu ที่สร้าง ไปยัง page ใหม่
 > แก้ไขไฟล์ /src/app/app.component.ts
@@ -30,8 +36,12 @@ test บน mobile view
 > Firefox >> Tools > Web Developer > Responsive Design Mode
 
 https://ionicframework.com/img/ionic-logo-white.svg
+
 สร้าง MyHeader component
-> ionic generate component MyHeader
+
+```
+ionic generate component MyHeader
+```
 - add MyHeaderComponent ใน app.module.ts
 - ใช้งาน MyHeaderComponent 
 >> ใส่ <my-header></my-header> ใน ?.html เพื่อแทน header เดิม จะได้ไม่ต้องตามแก้ไข header ทุกหน้า
@@ -47,6 +57,8 @@ https://ionicframework.com/img/ionic-logo-white.svg
 ทำการวนลูปแสดง Mockup Data และทำ event click เพื่อให้ไปแสดงรายละเอียดสินค้า
 
 create new page ที่จะใช้แสดงรายละเอียดสินค้า โดยใช้ command 
-> ionic generate page product-detail
+```
+ionic generate page product-detail
+```
 
 add page ที่สร้างเข้า promotion.module.ts, app.module.ts
