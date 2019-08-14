@@ -47,4 +47,4 @@ https://ionicframework.com/img/ionic-logo-white.svg
 create new page ที่จะใช้แสดงรายละเอียดสินค้า โดยใช้ command 
 > ionic generate page product-detail
 
-add page ที่สร้างเข้า promotion.module.ts, app.module.ts# ionic-3-kuse-demo
+add page ที่สร้างเข้า promotion.module.ts, app.module.ts
