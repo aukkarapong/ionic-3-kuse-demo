@@ -47,14 +47,21 @@ ionic generate component MyHeader
 >> ใส่ <my-header></my-header> ใน ?.html เพื่อแทน header เดิม จะได้ไม่ต้องตามแก้ไข header ทุกหน้า
 
 สร้าง Page ต่าง ๆ ให้ครบ และสร้าง link แต่ละ menu ไปยัง page ต่าง ๆ เหมือนขั้นตอนด้านบน
+```
+ionic generate page {page name}
+```
 
 แก้ไข Header โดยเอา component header มาใช้ เหมือนขั้นตอนด้านบน
+> src/pages/{page folder}/{page}.html
 
 สร้าง view (ไฟล์ .html)
+> src/pages/promotion/promotion.html
 
 สร้าง Mockup Data (ไฟล์ .ts)
+> src/pages/promotion/promotion.ts
 
 ทำการวนลูปแสดง Mockup Data และทำ event click เพื่อให้ไปแสดงรายละเอียดสินค้า
+> src/pages/promotion/promotion.html
 
 create new page ที่จะใช้แสดงรายละเอียดสินค้า โดยใช้ command 
 ```
@@ -64,6 +71,5 @@ ionic generate page product-detail
 add page ที่สร้างเข้า promotion.module.ts, app.module.ts
 
 ทำการส่งค่าสินค้าที่เลือกจากหน้า promotion ไปยังหน้า product-detail
-> src/pages/promotion/promotion.ts, src/pages/promotion/promotion.html
----
+> src/pages/promotion/promotion.ts, src/pages/promotion/promotion.html__
 > src/pages/product-detail/product-detail.ts, src/pages/product-detail/product-detail.html
