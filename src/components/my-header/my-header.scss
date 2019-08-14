@@ -1,0 +1,36 @@
+my-header {
+  .toolbar-ios {
+    min-height: 56px;
+  }  
+
+  .bar-buttons-md {
+    order: 1;
+  }
+
+  .bar-buttons-md[end] {
+    order: 4;
+  }
+
+  .toolbar-content-md {
+    text-align: center;
+  }
+
+  .my-header {
+    background-color: red;
+  }
+
+  button {
+    ion-badge {
+      position: absolute;
+      top: -0.2rem;
+      right: -0.2rem;
+      opacity: 0.8;
+      border-radius: 50% !important;
+  
+      & ~ ion-icon {
+        margin-right: 1.2rem;
+        font-size: 28px !important;
+      }
+    }
+  }
+}
