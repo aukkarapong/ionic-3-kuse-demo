@@ -8,8 +8,8 @@
     </ion-buttons>
     <ion-title><img alt="logo" width="123" height="43" src="/assets/imgs/ionic-logo-white.svg" ></ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal">
-        <ion-badge color="danger">0</ion-badge>
+      <button ion-button icon-only color="royal" (click)="viewCart()">
+        <ion-badge color="danger">{{ totalCartQty }}</ion-badge>
         <ion-icon name="cart"></ion-icon>
       </button>
     </ion-buttons>

@@ -14,12 +14,18 @@ import { SushiPage } from '../pages/sushi/sushi';
 import { DelicatessenPage } from '../pages/delicatessen/delicatessen';
 import { BeveragePage } from '../pages/beverage/beverage';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
+import { ViewCartPage } from '../pages/view-cart/view-cart';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 // My Header
 import { MyHeaderComponent } from '../components/my-header/my-header'
+
+import { HttpClientModule } from '@angular/common/http';
+import { RestProvider } from '../providers/rest/rest';
+
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -35,12 +41,15 @@ import { MyHeaderComponent } from '../components/my-header/my-header'
     DelicatessenPage,
     BeveragePage,
     ProductDetailPage,
+    ViewCartPage,
     // My Header
     MyHeaderComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,12 +64,14 @@ import { MyHeaderComponent } from '../components/my-header/my-header'
     SushiPage,
     DelicatessenPage,
     BeveragePage,
-    ProductDetailPage
+    ProductDetailPage,
+    ViewCartPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider
   ]
 })
 export class AppModule {}

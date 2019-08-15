@@ -78,14 +78,14 @@ add page ที่สร้างเข้า promotion.module.ts, app.module.ts
 
 ลง package เพิ่มดังนี้
 ```
-npm install @angular/common@latest --save
-npm install @angular/compiler@latest --save
-npm install @angular/compiler-cli@latest --save
-npm install @angular/core@latest --save
-npm install @angular/forms@latest --save
-npm install @angular/http@latest --save
-npm install @angular/platform-browser@latest --save
-npm install @angular/platform-browser-dynamic@latest --save
+npm install @angular/common@5.2.11 --save
+npm install @angular/compiler@5.2.11 --save
+npm install @angular/compiler-cli@5.2.11 --save
+npm install @angular/core@5.2.11 --save
+npm install @angular/forms@5.2.11 --save
+npm install @angular/http@5.2.11 --save
+npm install @angular/platform-browser@5.2.11 --save
+npm install @angular/platform-browser-dynamic@5.2.11 --save
 ```
 
 แก้ไข src/app/app.module.ts
@@ -96,5 +96,25 @@ imports: [
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
-  ],
+],
+```
+
+สร้าง provider
+```
+ionic g provider Rest
+```
+
+จากนั้นจะได้ไฟล์ providers/rest/rest.ts เราจะเพิ่ม function ในการ call api โดยแก้ไขไฟล์ rest.ts และทำการทดลองเรียกใช้งานที่ pages
+
+สร้าง api
+
+ใช้งาน local storage เพื่อทำการ add cart
+```
+ionic cordova plugin add cordova-sqlite-storage --save
+npm install --save @ionic/storage
+```
+
+แสดง cart
+```
+ionic generate page view-cart
 ```

@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductDetailPage } from '../product-detail/product-detail'
 
+import { RestProvider } from '../../providers/rest/rest';
+import { Storage } from '@ionic/storage';
+
+import { Events } from 'ionic-angular';
+
 /**
  * Generated class for the PromotionPage page.
  *
@@ -15,7 +20,7 @@ import { ProductDetailPage } from '../product-detail/product-detail'
   templateUrl: 'promotion.html',
 })
 export class PromotionPage {
-  items = [
+  /* items = [
     {
       productId: "1",
       productName: "B02 ซูชิ บัดดี้ เซท",
@@ -40,17 +45,49 @@ export class PromotionPage {
       image: "https://oishidelivery.com/storage/uploads/menus/5b95874936f69c5b0aef051e6a375a48.jpg",
       selectedQty: "1"
     }
-  ];
+  ]; */
+
+  items: any
 
   minOrder: number = 1
   maxOrder: number = 10
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public restProvider: RestProvider, 
+    private storage: Storage,
+    public events: Events) {
     
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PromotionPage');
+    // console.log('ionViewDidLoad PromotionPage');
+  }
+
+  ionViewDidEnter(){
+    // this.getUsersTest();
+    this.getPromotionProducts();
+  }
+
+  getUsersTest() {
+    this.restProvider.getUsersTest()
+    .then(data => {
+      console.log('#####')
+      console.log(data)
+      console.log('#####')
+    });
+  }
+
+  getPromotionProducts() {
+    this.restProvider.getPromotionProducts()
+    .then(data => {
+      this.items = data
+      this.items.map((item, index) => {
+        item.selectedQty = "1"
+        this.items[index] = item
+      })
+    });
   }
 
   itemSelected(selectedProduct) {
@@ -85,6 +122,62 @@ export class PromotionPage {
   greaterThanMaxOrder(qty) {
     if (qty > this.maxOrder) return true
     return false
+  }
+
+  addToCart(item) {
+    this.storage.get('cart').then((cart) => {
+      if (cart == null) {
+        cart = {
+          totalQty: item.selectedQty,
+          totalPrice: parseFloat(item.selectedQty) * parseFloat(item.price),
+          items: [
+            item
+          ]
+        }
+        this.storage.set('cart', cart)
+        .then(() => {
+          this.events.publish('cart:updateCart');
+        })
+        
+      } else {
+        const isDuplicate = this.checkProductInCartItems(cart.items, item)
+        if ( isDuplicate ) {
+          const newItems = cart.items.map((element, index) => {
+            if (element.productId != item.productId) {
+              return element
+            } else {
+              element.selectedQty = parseInt(element.selectedQty) + parseInt(item.selectedQty)
+              return element
+            }
+          })
+          cart.items = newItems
+        } else {
+          cart.items.push(item)
+        }
+        const newTotalQty = cart.items.reduce((totalQty, element) => {
+          return parseInt(totalQty) + parseInt(element.selectedQty)
+        }, 0)
+        
+        const newTotalPrice = cart.items.reduce((totalPrice, element) => {
+          return parseFloat(totalPrice) + (parseFloat(element.selectedQty) * parseFloat(element.price))
+        }, 0)
+
+        cart.totalQty = newTotalQty
+        cart.totalPrice = newTotalPrice
+        this.storage.set('cart', cart)
+        .then(() => {
+          this.events.publish('cart:updateCart');
+        })        
+      }
+    });
+  }
+
+  checkProductInCartItems(cartItems, product){
+    let isDuplicateProduct = cartItems.find(item => {
+      return item.productId == product.productId
+    })
+    if (isDuplicateProduct === undefined) return false
+    return true
   }
 
 }

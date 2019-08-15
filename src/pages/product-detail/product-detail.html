@@ -7,5 +7,26 @@
 <my-header></my-header>
 
 <ion-content padding>
-
+  <ion-card class="mt-50">
+    <img src="{{ product.image }}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ product.productName }}
+      </ion-card-title>
+      <p class="category">{{ product.category }}</p>
+      <h2 class="product-price"><span class="price">{{ product.price }}</span> THB.</h2>
+      <p>
+        <button ion-button color="danger" round outline small class="qty-btn" (click)="decressQty()">
+          <ion-icon name="remove" is-active="false"></ion-icon>
+        </button>
+        <span class="qty">{{ product.selectedQty }}</span>
+        <button ion-button color="danger" round outline small class="qty-btn" (click)="incressQty()">
+          <ion-icon name="add" is-active="false"></ion-icon>
+        </button>              
+        <button ion-button color="danger" small class="add-cart-btn" (click)="addToCart(product)">
+          <ion-icon name="cart" is-active="false"></ion-icon>
+        </button>
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

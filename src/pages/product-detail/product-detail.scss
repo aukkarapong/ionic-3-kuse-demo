@@ -1,3 +1,30 @@
 page-product-detail {
+  .mt-50 {
+    margin-top: 45px;
+  }
 
+  .product-price {
+    margin: 20px 0px;
+  }
+
+  .product-price span.price {
+    color: red;
+  }
+
+  .qty-btn {
+    padding: 0px 10px;
+  }
+
+  span.qty {
+    font-size: 20px;
+    display: inline;
+    top: 5px;
+    position: relative;
+    margin: 0px 10px;
+  }
+
+  .add-cart-btn {
+    min-width: 40px;
+    margin-left: 15px;
+  }
 }

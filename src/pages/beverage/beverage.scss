@@ -1,3 +1,42 @@
 page-beverage {
+  .products {
+    margin-top: 45px;
+  }
 
+  .product-name {
+    font-size: 20px;
+    margin: 5px 0px 5px 0px;  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .category {
+    margin: 0px 0px 5px 0px;
+  }
+
+  .product-price {
+    margin: 20px 0px;
+  }
+
+  .product-price span.price {
+    color: red;
+  }
+
+  .qty-btn {
+    padding: 0px 10px;
+  }
+
+  span.qty {
+    font-size: 20px;
+    display: inline;
+    top: 5px;
+    position: relative;
+    margin: 0px 10px;
+  }
+
+  .add-cart-btn {
+    min-width: 40px;
+    margin-left: 15px;
+  }
 }
