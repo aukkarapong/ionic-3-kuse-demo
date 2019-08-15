@@ -73,3 +73,28 @@ add page ที่สร้างเข้า promotion.module.ts, app.module.ts
 ทำการส่งค่าสินค้าที่เลือกจากหน้า promotion ไปยังหน้า product-detail
 > src/pages/promotion/promotion.ts, src/pages/promotion/promotion.html<br />
 > src/pages/product-detail/product-detail.ts, src/pages/product-detail/product-detail.html
+
+ดึงข้อมูลสินค้าจาก api มาแสดง
+
+ลง package เพิ่มดังนี้
+```
+npm install @angular/common@latest --save
+npm install @angular/compiler@latest --save
+npm install @angular/compiler-cli@latest --save
+npm install @angular/core@latest --save
+npm install @angular/forms@latest --save
+npm install @angular/http@latest --save
+npm install @angular/platform-browser@latest --save
+npm install @angular/platform-browser-dynamic@latest --save
+```
+
+แก้ไข src/app/app.module.ts
+```
+import { HttpClientModule } from '@angular/common/http';
+...
+imports: [
+    HttpClientModule,
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+  ],
+```
