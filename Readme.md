@@ -1,3 +1,10 @@
+```
+1. สร้าง project (แบบ side menu)
+2. เพิ่ม menu ใน side menu
+3. สร้าง page
+4. สร้าง view ใน page
+```
+
 start project
 ```
 ionic start oishi --type=ionic-angular sidemenu
