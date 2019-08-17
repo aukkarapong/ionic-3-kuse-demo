@@ -23,11 +23,11 @@ oishiApiUrl = 'http://www.zp11107.tld.122.155.17.167.no-domain.name/oishi';
 getPromotionProducts() {
 return new Promise(resolve => {
     this.http.get(this.oishiApiUrl+'/products.php?type=promotions').subscribe(data => {
-    resolve(data);
-    }, err => {
-    console.log(err);
+            resolve(data);
+        }, err => {
+            console.log(err);
+        });
     });
-});
 }
 ```
 
