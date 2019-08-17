@@ -15,6 +15,33 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class ViewCartPage {
 
+  items = [
+    {
+      productId: "1",
+      productName: "B02 ซูชิ บัดดี้ เซท",
+      category: "ซูชิ",
+      price: "470.00",
+      image: "https://oishidelivery.com/storage/uploads/menus/51b980d1d9b0857c902cc83283fef7a6.jpg",
+      selectedQty: "1"
+    },
+    {
+      productId: "2",
+      productName: "C08 ข้าวหน้าแซลม่อน ย่างซีอิ๊ว",
+      category: "ข้าวหน้าและซุปต่าง ๆ",
+      price: "169.00",
+      image: "https://oishidelivery.com/storage/uploads/menus/c2412bb8fcb70a289c2456a3f3a628fb.jpg",
+      selectedQty: "1"
+    },
+    {
+      productId: "3",
+      productName: "A02 ซาบะ เบนโตะ เซท",
+      category: "เบนโตะ",
+      price: "189.00",
+      image: "https://oishidelivery.com/storage/uploads/menus/5b95874936f69c5b0aef051e6a375a48.jpg",
+      selectedQty: "1"
+    }
+  ];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
