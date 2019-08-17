@@ -53,30 +53,30 @@ items = [
 promotions.html
 ```
 <ion-grid ion-item  *ngFor="let item of items; let i = index">
-          <ion-row>
-            <ion-col col-5>
-              <img src="{{ item.image }}">
-            </ion-col>
-            <ion-col col-7>
-              <h2 class="product-name">{{ item.productName }}</h2>
-              <p class="category">{{ item.category }}</p>
-              <h2 class="product-price"><span class="price">{{ item.price }}</span> THB.</h2>
-              <!-- <ion-input type="number" placeholder="Number Input with no label"></ion-input> -->
-              <p>
-                <button ion-button color="danger" round outline small class="qty-btn">
-                  <ion-icon name="remove" is-active="false"></ion-icon>
-                </button>
-                <span class="qty">{{ item.selectedQty }}</span>
-                <button ion-button color="danger" round outline small class="qty-btn">
-                  <ion-icon name="add" is-active="false"></ion-icon>
-                </button>              
-                <button ion-button color="danger" small class="add-cart-btn">
-                  <ion-icon name="cart" is-active="false"></ion-icon>
-                </button>
-              </p>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+    <ion-row>
+        <ion-col col-5>
+            <img src="{{ item.image }}">
+        </ion-col>
+        <ion-col col-7>
+            <h2 class="product-name">{{ item.productName }}</h2>
+            <p class="category">{{ item.category }}</p>
+            <h2 class="product-price"><span class="price">{{ item.price }}</span> THB.</h2>
+            <!-- <ion-input type="number" placeholder="Number Input with no label"></ion-input> -->
+            <p>
+            <button ion-button color="danger" round outline small class="qty-btn">
+                <ion-icon name="remove" is-active="false"></ion-icon>
+            </button>
+            <span class="qty">{{ item.selectedQty }}</span>
+            <button ion-button color="danger" round outline small class="qty-btn">
+                <ion-icon name="add" is-active="false"></ion-icon>
+            </button>              
+            <button ion-button color="danger" small class="add-cart-btn">
+                <ion-icon name="cart" is-active="false"></ion-icon>
+            </button>
+            </p>
+        </ion-col>
+    </ion-row>
+</ion-grid>
 ```
 
 ```
