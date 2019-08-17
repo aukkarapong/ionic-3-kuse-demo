@@ -21,7 +21,7 @@
 <ion-content class="" padding>
   <ion-list>
     <!-- <ion-item> -->
-      <ion-grid ion-item *ngFor="let item of items; let i = index">
+      <ion-grid ion-item *ngFor="let item of cartItems; let i = index">
         <ion-row>
           <ion-col col-5>
             <img src="{{ item.image }}" (click)="itemSelected(item)">

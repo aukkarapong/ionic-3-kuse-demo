@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the ViewCartPage page.
@@ -15,7 +16,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class ViewCartPage {
 
-  items = [
+  /* cartItems = [
     {
       productId: "1",
       productName: "B02 ซูชิ บัดดี้ เซท",
@@ -40,17 +41,33 @@ export class ViewCartPage {
       image: "https://oishidelivery.com/storage/uploads/menus/5b95874936f69c5b0aef051e6a375a48.jpg",
       selectedQty: "1"
     }
-  ];
+  ]; */
+  cartItems: any
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public viewCtrl: ViewController,
+    private storage: Storage) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewCartPage');
+    // console.log('ionViewDidLoad ViewCartPage');
+  }
+
+  ionViewDidEnter(){
+    // console.log(this.product);
+    this.loadCart()
   }
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  loadCart() {
+    this.storage.get('cart').then((cart) => {
+      this.cartItems = cart.items
+    });
   }
 
 }
