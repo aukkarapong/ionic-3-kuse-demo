@@ -4,13 +4,14 @@
 3. สร้าง page (หน้า promotion แสดงแบบ list)
 4. สร้าง view (.html) ใน page
 5. ดึงข้อมูลจากไฟล์ .ts มาแสดงผลใน view
-6. สร้าง component header
-7. ดึงข้อมูลจาก api มาแสดงผล
-    6.1 สร้าง rest provider
-    6.2 implement วิธีการดึงข้อมูลจาก rest api
-8. implement หน้า detail
-9. add cart
-10. view cart
+6. สร้างหน้า detail แสดงสินค้า
+7. สร้าง component header
+8. ดึงข้อมูลจาก api มาแสดงผล
+    8.1 สร้าง rest provider
+    8.2 implement วิธีการดึงข้อมูลจาก rest api
+9. implement หน้า detail
+10. add cart
+11. view cart
 ```
 
 start project
