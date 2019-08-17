@@ -8,8 +8,9 @@
 7. ดึงข้อมูลจาก api มาแสดงผล
     6.1 สร้าง rest provider
     6.2 implement วิธีการดึงข้อมูลจาก rest api
-8. add cart
-9. view cart
+8. implement หน้า detail
+9. add cart
+10. view cart
 ```
 
 start project
