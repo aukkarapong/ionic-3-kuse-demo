@@ -20,6 +20,65 @@ username : zp11107_ionic
 password : RbXJdCy9uUi6FCcj
 ```
 
+promotions.ts
+```
+items = [
+    {
+      productId: "1",
+      productName: "B02 ซูชิ บัดดี้ เซท",
+      category: "ซูชิ",
+      price: "470.00",
+      image: "https://oishidelivery.com/storage/uploads/menus/51b980d1d9b0857c902cc83283fef7a6.jpg",
+      selectedQty: "1"
+    },
+    {
+      productId: "2",
+      productName: "C08 ข้าวหน้าแซลม่อน ย่างซีอิ๊ว",
+      category: "ข้าวหน้าและซุปต่าง ๆ",
+      price: "169.00",
+      image: "https://oishidelivery.com/storage/uploads/menus/c2412bb8fcb70a289c2456a3f3a628fb.jpg",
+      selectedQty: "1"
+    },
+    {
+      productId: "3",
+      productName: "A02 ซาบะ เบนโตะ เซท",
+      category: "เบนโตะ",
+      price: "189.00",
+      image: "https://oishidelivery.com/storage/uploads/menus/5b95874936f69c5b0aef051e6a375a48.jpg",
+      selectedQty: "1"
+    }
+  ]
+```
+
+promotions.html
+```
+<ion-grid ion-item  *ngFor="let item of items; let i = index">
+          <ion-row>
+            <ion-col col-5>
+              <img src="{{ item.image }}">
+            </ion-col>
+            <ion-col col-7>
+              <h2 class="product-name">{{ item.productName }}</h2>
+              <p class="category">{{ item.category }}</p>
+              <h2 class="product-price"><span class="price">{{ item.price }}</span> THB.</h2>
+              <!-- <ion-input type="number" placeholder="Number Input with no label"></ion-input> -->
+              <p>
+                <button ion-button color="danger" round outline small class="qty-btn">
+                  <ion-icon name="remove" is-active="false"></ion-icon>
+                </button>
+                <span class="qty">{{ item.selectedQty }}</span>
+                <button ion-button color="danger" round outline small class="qty-btn">
+                  <ion-icon name="add" is-active="false"></ion-icon>
+                </button>              
+                <button ion-button color="danger" small class="add-cart-btn">
+                  <ion-icon name="cart" is-active="false"></ion-icon>
+                </button>
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+```
+
 ```
 <ion-content class="products">
     <ion-list>
