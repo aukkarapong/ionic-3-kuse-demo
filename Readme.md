@@ -1,8 +1,14 @@
 ```
 1. สร้าง project (แบบ side menu)
 2. เพิ่ม menu ใน side menu
-3. สร้าง page
-4. สร้าง view ใน page
+3. สร้าง page (หน้า promotion แสดงแบบ list)
+4. สร้าง view (.html) ใน page
+5. ดึงข้อมูลจากไฟล์ .ts มาแสดงผลใน view
+6. ดึงข้อมูลจาก api มาแสดงผล
+    6.1 สร้าง rest provider
+    6.2 implement วิธีการดึงข้อมูลจาก rest api
+7. add cart
+8. view cart
 ```
 
 start project
