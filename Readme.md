@@ -15,6 +15,10 @@
 ```
 
 ```
+https://cat17-167.static.lnwhostname.com/phpmyadmin/
+```
+
+```
 <ion-content class="products">
     <ion-list>
       <!-- <ion-item> -->
