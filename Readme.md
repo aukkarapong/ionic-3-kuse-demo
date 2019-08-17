@@ -14,6 +14,42 @@
 11. view cart
 ```
 
+```
+<ion-content class="products">
+    <ion-list>
+      <!-- <ion-item> -->
+        <ion-grid ion-item>
+          <ion-row>
+            <ion-col col-5>
+              <img src="https://oishidelivery.com/storage/uploads/menus/51b980d1d9b0857c902cc83283fef7a6.jpg">
+            </ion-col>
+            <ion-col col-7>
+              <h2 class="product-name">B02 ซูชิ บัดดี้ เซท</h2>
+              <p class="category">ซูชิ</p>
+              <h2 class="product-price"><span class="price">470</span> THB.</h2>
+              <!-- <ion-input type="number" placeholder="Number Input with no label"></ion-input> -->
+              <p>
+                <button ion-button color="danger" round outline small class="qty-btn">
+                  <ion-icon name="remove" is-active="false"></ion-icon>
+                </button>
+                <span class="qty">1</span>
+                <button ion-button color="danger" round outline small class="qty-btn">
+                  <ion-icon name="add" is-active="false"></ion-icon>
+                </button>              
+                <button ion-button color="danger" small class="add-cart-btn">
+                  <ion-icon name="cart" is-active="false"></ion-icon>
+                </button>
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      <!-- </ion-item> -->
+    </ion-list>
+      
+</ion-content>
+```
+
+
 start project
 ```
 ionic start oishi --type=ionic-angular sidemenu
