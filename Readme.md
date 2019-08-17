@@ -16,6 +16,8 @@
 
 ```
 https://cat17-167.static.lnwhostname.com/phpmyadmin/
+username : zp11107_ionic
+password : RbXJdCy9uUi6FCcj
 ```
 
 ```
