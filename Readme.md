@@ -15,6 +15,39 @@
 ```
 
 ```
+import { RestProvider } from '../../providers/rest/rest';
+
+...
+
+  items: any
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public restProvider: RestProvider) {
+  }
+ 
+...
+
+  ionViewDidEnter() {
+    console.log(this.items)
+    this.fetchPromotions()
+  }
+
+  fetchPromotions() {
+    this.restProvider.getPromotionProducts()
+    .then(data => {
+      console.log(data)
+      // this.items = data
+      // this.items.map((item, index) => {
+      //   item.selectedQty = "1"
+      //   this.items[index] = item
+      // })
+    });
+  }
+```
+
+```
 https://cat17-167.static.lnwhostname.com/phpmyadmin/
 username : zp11107_ionic
 password : RbXJdCy9uUi6FCcj
