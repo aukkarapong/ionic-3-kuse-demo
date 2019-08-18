@@ -15,6 +15,8 @@ import { DelicatessenPage } from '../pages/delicatessen/delicatessen';
 import { BeveragePage } from '../pages/beverage/beverage';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { ViewCartPage } from '../pages/view-cart/view-cart';
+import { LoginPage } from '../pages/login/login';
+import { LogoutPage } from '../pages/logout/logout';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -42,6 +44,8 @@ import { IonicStorageModule } from '@ionic/storage';
     BeveragePage,
     ProductDetailPage,
     ViewCartPage,
+    LoginPage,
+    LogoutPage,
     // My Header
     MyHeaderComponent
   ],
@@ -65,7 +69,9 @@ import { IonicStorageModule } from '@ionic/storage';
     DelicatessenPage,
     BeveragePage,
     ProductDetailPage,
-    ViewCartPage
+    ViewCartPage,
+    LogoutPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

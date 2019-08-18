@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
+import { Events } from 'ionic-angular';
+
 /**
  * Generated class for the ViewCartPage page.
  *
@@ -16,39 +18,14 @@ import { Storage } from '@ionic/storage';
 })
 export class ViewCartPage {
 
-  /* cartItems = [
-    {
-      productId: "1",
-      productName: "B02 ซูชิ บัดดี้ เซท",
-      category: "ซูชิ",
-      price: "470.00",
-      image: "https://oishidelivery.com/storage/uploads/menus/51b980d1d9b0857c902cc83283fef7a6.jpg",
-      selectedQty: "1"
-    },
-    {
-      productId: "2",
-      productName: "C08 ข้าวหน้าแซลม่อน ย่างซีอิ๊ว",
-      category: "ข้าวหน้าและซุปต่าง ๆ",
-      price: "169.00",
-      image: "https://oishidelivery.com/storage/uploads/menus/c2412bb8fcb70a289c2456a3f3a628fb.jpg",
-      selectedQty: "1"
-    },
-    {
-      productId: "3",
-      productName: "A02 ซาบะ เบนโตะ เซท",
-      category: "เบนโตะ",
-      price: "189.00",
-      image: "https://oishidelivery.com/storage/uploads/menus/5b95874936f69c5b0aef051e6a375a48.jpg",
-      selectedQty: "1"
-    }
-  ]; */
   cartItems: any
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public viewCtrl: ViewController,
-    private storage: Storage) {
+    private storage: Storage,
+    public events: Events) {
   }
 
   ionViewDidLoad() {
@@ -68,6 +45,31 @@ export class ViewCartPage {
     this.storage.get('cart').then((cart) => {
       this.cartItems = cart.items
     });
+  }
+
+  deleteCartItem(item){
+    this.storage.get('cart').then((cart) => {
+      const newItems = cart.items.filter((element, index) => {
+        return element.productId != item.productId
+      })
+      cart.items = newItems
+
+      const newTotalQty = cart.items.reduce((totalQty, element) => {
+        return parseInt(totalQty) + parseInt(element.selectedQty)
+      }, 0)
+      
+      const newTotalPrice = cart.items.reduce((totalPrice, element) => {
+        return parseFloat(totalPrice) + (parseFloat(element.selectedQty) * parseFloat(element.price))
+      }, 0)
+
+      cart.totalQty = newTotalQty
+      cart.totalPrice = newTotalPrice
+      this.storage.set('cart', cart)
+      .then(() => {
+        this.events.publish('cart:updateCart');
+        this.loadCart()
+      })   
+    });    
   }
 
 }

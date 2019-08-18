@@ -286,3 +286,48 @@ npm install --save @ionic/storage
 ```
 ionic generate page view-cart
 ```
+
+iOS Deploy
+
+1.  แก้ package ที่ไฟล์ config.xml
+```
+<widget id="io.ionic.starter" version="0.0.1" ...
+to
+<widget id="lab.kuse.demo" version="0.0.1" ...
+```
+
+2. รัน command 
+```
+ionic cordova prepare ios
+```
+
+3. เปิด Xcode
+```
+platforms/ios/MyApp.xcodeproj
+
+ไปที่ MyApp
+> เลือก tab "General" แล้วทำการ Add Account (Apple ID) 
+> เลือก Dropdown Team
+> Run บน simulator iPhone 8
+```
+
+4. วิธีการรันบน iPhone Device
+```
+> เสียบสาย iPhone
+Xcode > File > Project Settings > Build System > Legacy Build System
+iPhone > Settings > General > Profiles & Device Management > Develeper App > กด Trust
+Xcode > เลือก Device > Run
+
+```
+
+5. commandสำหรับลบ platform
+```
+ionic cordova platform rm ios
+```
+
+
+```
+curl -d '{"email":"developer@kuse.ac.th", "password":"kuse1234"}' -H "Content-Type: application/json" -X POST http://www.zp11107.tld.122.155.17.167.no-domain.name/oishi/login.php
+
+curl -d '{"email":"test", "password":"test"}' -H "Content-Type: application/json" -X POST http://www.zp11107.tld.122.155.17.167.no-domain.name/oishi/login.php
+```

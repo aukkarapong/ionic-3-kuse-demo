@@ -14,6 +14,11 @@ import { SushiPage } from '../pages/sushi/sushi';
 import { DelicatessenPage } from '../pages/delicatessen/delicatessen';
 import { BeveragePage } from '../pages/beverage/beverage';
 import { ProductDetailPage } from '../pages/product-detail/product-detail';
+import { LoginPage } from '../pages/login/login';
+import { LogoutPage } from '../pages/logout/logout';
+
+import { Storage } from '@ionic/storage';
+import { Events } from 'ionic-angular';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,23 +31,49 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    private storage: Storage,
+    public events: Events) {
+    this.initializeApp();   
+    this.initializeMenu();
 
-    // used for an example of ngFor and navigation
-    this.pages = [
-      // { title: 'Home', component: HomePage },
-      // { title: 'List', component: ListPage },
-      { title: 'เข้าสู่ระบบ | สมัครสมาชิก', component: RegisterPage },
-      { title: 'โปรโมชั่น', component: PromotionPage },
-      { title: 'ชุดเบนโตะ', component: BentoPage },
-      { title: 'อาหารทานเล่น', component: SnackPage },
-      { title: 'ข้าวหน้าและซุปต่าง ๆ', component: RicePage },
-      { title: 'ซูชิ', component: SushiPage },
-      { title: 'อาหารสำเร็จรูป', component: DelicatessenPage },
-      { title: 'เครื่องดื่ม', component: BeveragePage }
-    ];
+    events.subscribe('login:loginSuccess', () => {
+      this.initializeMenu();
+    });
+  }
 
+  initializeMenu() {
+    this.storage.get('userProfile').then((userProfile) => {
+      if (userProfile == null) {
+        // used for an example of ngFor and navigation
+        this.pages = [
+          // { title: 'Home', component: HomePage },
+          // { title: 'List', component: ListPage },
+          { title: 'เข้าสู่ระบบ | สมัครสมาชิก', component: LoginPage },
+          { title: 'โปรโมชั่น', component: PromotionPage },
+          { title: 'ชุดเบนโตะ', component: BentoPage },
+          { title: 'อาหารทานเล่น', component: SnackPage },
+          { title: 'ข้าวหน้าและซุปต่าง ๆ', component: RicePage },
+          { title: 'ซูชิ', component: SushiPage },
+          { title: 'อาหารสำเร็จรูป', component: DelicatessenPage },
+          { title: 'เครื่องดื่ม', component: BeveragePage }
+        ];
+      } else {
+        this.pages = [
+          { title: 'ออกจากระบบ', component: LogoutPage },
+          { title: 'โปรโมชั่น', component: PromotionPage },
+          { title: 'ชุดเบนโตะ', component: BentoPage },
+          { title: 'อาหารทานเล่น', component: SnackPage },
+          { title: 'ข้าวหน้าและซุปต่าง ๆ', component: RicePage },
+          { title: 'ซูชิ', component: SushiPage },
+          { title: 'อาหารสำเร็จรูป', component: DelicatessenPage },
+          { title: 'เครื่องดื่ม', component: BeveragePage }
+        ];   
+      }
+    });
   }
 
   initializeApp() {

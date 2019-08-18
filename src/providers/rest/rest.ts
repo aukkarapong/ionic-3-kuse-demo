@@ -97,4 +97,14 @@ export class RestProvider {
     });
   }
 
+  login(requestData){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.oishiApiUrl + '/login.php', JSON.stringify(requestData)).subscribe(data => {
+        resolve(data)
+      }, err => {
+        reject(err)
+      });
+    });
+  }
+
 }
