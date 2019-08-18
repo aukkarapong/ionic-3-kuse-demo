@@ -298,6 +298,7 @@ to
 
 2. รัน command 
 ```
+ionic cordova platform add ios
 ionic cordova prepare ios
 ```
 
@@ -330,4 +331,9 @@ ionic cordova platform rm ios
 curl -d '{"email":"developer@kuse.ac.th", "password":"kuse1234"}' -H "Content-Type: application/json" -X POST http://www.zp11107.tld.122.155.17.167.no-domain.name/oishi/login.php
 
 curl -d '{"email":"test", "password":"test"}' -H "Content-Type: application/json" -X POST http://www.zp11107.tld.122.155.17.167.no-domain.name/oishi/login.php
+```
+
+Android Build
+```
+https://cordova.apache.org/docs/en/latest/guide/platforms/android/
 ```
