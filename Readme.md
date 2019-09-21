@@ -1,4 +1,13 @@
 ```
+ionic cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="AIzaSyAMTWAEPTLd3zV8MvCvCwOR_-h7m2-C6uQ" --variable API_KEY_FOR_IOS="AIzaSyBOT7Z8bfbFtjDq9HOPmLZANb0QivxXUIY"
+
+npm i --save @ionic-native/core@4.17.0
+npm i --save @ionic-native/google-maps@4.15.1
+
+AIzaSyCeLt4q_rdFcYI6iAvEwq3m-QNtWh7iQSc
+```
+
+```
 1. สร้าง project (แบบ side menu)
 2. เพิ่ม menu ใน side menu
 3. สร้าง page (หน้า promotion แสดงแบบ list)

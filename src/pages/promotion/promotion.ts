@@ -176,6 +176,15 @@ export class PromotionPage {
     let isDuplicateProduct = cartItems.find(item => {
       return item.productId == product.productId
     })
+
+    // let isDuplicateProduct2 = cartItems.find(function(item){
+    //   if (item.productId == product.productId){
+    //     return true
+    //   } else {
+    //     return false
+    //   }
+    // })
+
     if (isDuplicateProduct === undefined) return false
     return true
   }

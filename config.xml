@@ -101,4 +101,10 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-sqlite-storage" spec="3.2.1" />
     <engine name="ios" spec="4.5.5" />
+    <plugin name="cordova-plugin-googlemaps" spec="2.6.2">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAMTWAEPTLd3zV8MvCvCwOR_-h7m2-C6uQ" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyBOT7Z8bfbFtjDq9HOPmLZANb0QivxXUIY" />
+    </plugin>
+    <engine name="browser" spec="~5.0.4" />
+    <allow-navigation href="http://192.168.1.104:8100" />
 </widget>

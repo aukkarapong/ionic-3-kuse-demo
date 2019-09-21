@@ -17,6 +17,7 @@ import { ProductDetailPage } from '../pages/product-detail/product-detail';
 import { ViewCartPage } from '../pages/view-cart/view-cart';
 import { LoginPage } from '../pages/login/login';
 import { LogoutPage } from '../pages/logout/logout';
+import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -46,6 +47,7 @@ import { IonicStorageModule } from '@ionic/storage';
     ViewCartPage,
     LoginPage,
     LogoutPage,
+    GoogleMapsPage,
     // My Header
     MyHeaderComponent
   ],
@@ -71,7 +73,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ProductDetailPage,
     ViewCartPage,
     LogoutPage,
-    LoginPage
+    LoginPage,
+    GoogleMapsPage
   ],
   providers: [
     StatusBar,
