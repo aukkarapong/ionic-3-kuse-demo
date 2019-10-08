@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Book</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>Book</h2>
+    <form (ngSubmit)="updateBook()">
+        <ion-item>
+            <ion-label floating>รหัสหนังสือ</ion-label>
+            <ion-input type="text" [(ngModel)]="selectedBook.isbn" name="isbn"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>ชื่อหนังสือ</ion-label>
+            <ion-input type="text" [(ngModel)]="selectedBook.name" name="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>วันที่วางจำหน่าย</ion-label>
+            <ion-input type="text" [(ngModel)]="selectedBook.release_date" name="release_date"></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>แก้ไขหนังสือ</button>
+    </form>
+</ion-content>

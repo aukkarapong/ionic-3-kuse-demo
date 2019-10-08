@@ -18,6 +18,8 @@ import { LoginPage } from '../pages/login/login';
 import { LogoutPage } from '../pages/logout/logout';
 import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 
+import { BookPage } from '../pages/book/book';
+
 import { Storage } from '@ionic/storage';
 import { Events } from 'ionic-angular';
 
@@ -61,7 +63,8 @@ export class MyApp {
           { title: 'ซูชิ', component: SushiPage },
           { title: 'อาหารสำเร็จรูป', component: DelicatessenPage },
           { title: 'เครื่องดื่ม', component: BeveragePage },
-          { title: 'Google Maps', component: GoogleMapsPage }
+          { title: 'Google Maps', component: GoogleMapsPage },
+          { title: 'Book', component: BookPage }
         ];
       } else {
         this.pages = [
@@ -73,7 +76,8 @@ export class MyApp {
           { title: 'ซูชิ', component: SushiPage },
           { title: 'อาหารสำเร็จรูป', component: DelicatessenPage },
           { title: 'เครื่องดื่ม', component: BeveragePage },
-          { title: 'Google Maps', component: GoogleMapsPage }
+          { title: 'Google Maps', component: GoogleMapsPage },
+          { title: 'Book', component: BookPage }
         ];   
       }
     });

@@ -12,6 +12,7 @@ export class RestProvider {
 
   apiUrl = 'https://jsonplaceholder.typicode.com';
   oishiApiUrl = 'http://www.zp11107.tld.122.155.17.167.no-domain.name/oishi';
+  bookApiUrl = 'http://www.zp11107.tld.122.155.17.167.no-domain.name';
 
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
@@ -105,6 +106,67 @@ export class RestProvider {
         reject(err)
       });
     });
+  }
+
+  getBooks() {
+    return new Promise(resolve => {
+      this.http.get(this.bookApiUrl + '/books/books.php').subscribe(
+        data => {
+          resolve(data)
+        },
+        err => {
+          console.log(err)
+        }
+      )
+    })
+  }
+
+  saveBook(data) {
+    return new Promise((resolve, reject) => {
+      this.http
+        .post(this.bookApiUrl + '/books/insert.php', JSON.stringify(data))
+        .subscribe(
+          res => {
+            resolve(res)
+          },
+          err => {
+            reject(err)
+          }
+        )
+    })
+  }
+
+  updateBook(data) {
+    return new Promise((resolve, reject) => {
+      this.http
+        .post(this.bookApiUrl + '/books/update.php', JSON.stringify(data))
+        .subscribe(
+          res => {
+            resolve(res)
+          },
+          err => {
+            reject(err)
+          }
+        )
+    })
+  }
+
+  deleteBook(bookId) {
+    return new Promise((resolve, reject) => {
+      this.http
+        .post(
+          this.bookApiUrl + '/books/delete.php',
+          JSON.stringify({ bookId: bookId })
+        )
+        .subscribe(
+          res => {
+            resolve(res)
+          },
+          err => {
+            reject(err)
+          }
+        )
+    })
   }
 
 }

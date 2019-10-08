@@ -64,6 +64,7 @@ npm i --save @ionic-native/google-maps@4.15.1
 ```
 ionic generate page google-maps
 ```
+สร้าง page เสร็จแล้วต้องทำการ declarations ที่ app.component.ts และ app.module.ts
 
 ## 2. แก้ไข html เพื่อกำหนดพื้นที่วาด maps
 ```
